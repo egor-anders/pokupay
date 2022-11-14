@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Покупай - Продавай — Заказ</title>
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__mobile">
+        <div id="menu-btn" class="header__menu-btn"></div>
+        <a href="/" class="header__logo header__logo--mobile">
+          <img src="./assets/images/logo.svg" alt="" />
+        </a>
+        <div id="options-btn" class="header__options-btn"></div>
+        <div id="mobile-nav" class="mobile-nav">
+          <a href="#" class="mobile-nav__item mobile-nav__item--active">Заказы</a>
+          <a href="#" class="mobile-nav__item">Торговый портал</a>
+          <a href="#" class="mobile-nav__item">Тренды</a>
+        </div>
+        <div id="options-nav" class="options-nav">
+          <span class="options-nav__title">Small</span>
+          <a href="#" class="options-nav__item">Моя страница</a>
+          <a href="#" class="options-nav__item">Настройки профиля</a>
+          <a href="#" class="options-nav__item">На счету: 7 800 руб.</a>
+          <a href="#" class="options-nav__item">Мои заказы</a>
+          <a href="#" class="options-nav__item">Мои предложения</a>
+          <a href="#" class="options-nav__item">Магазин</a>
+          <a href="#" class="options-nav__item">Личных сообщений нет</a>
+          <a href="#" class="options-nav__item">Администрирование</a>
+          <a href="#" class="options-nav__item">Выход</a>
+          <a href="#" class="options-nav__item">SMS-переписка</a>
+        </div>
+      </div>
+      <div class="header__desktop">
+        <a href="/" class="header__logo header__logo--desktop">
+          <img src="./assets/images/logo.svg" alt="" />
+        </a>
+        <div class="header__links">
+          <a href="#" class="header__link">Войти</a>
+          <a href="#" class="header__link">Помощь</a>
+          <a href="tel:+7 (999) 123-45-67" class="header__link">+7 (999) 123-45-67</a>
+        </div>
+        <div class="desktop-nav">
+          <a href="#" class="desktop-nav__item desktop-nav__item--active">Заказы</a>
+          <a href="#" class="desktop-nav__item">Торговый портал</a>
+          <a href="#" class="desktop-nav__item">Тренды</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-header container">
+      <div class="raindrops page-header__raindrops"></div>
+      <div class="page-header__breadcrumbs">
+        <span class="page-header__breadcrumb">Заказы</span>
+        <span class="page-header__breadcrumb">Продукты питания</span>
+        <a href="#" class="page-header__breadcrumb">Яблоки свежие "Гремми Смит" фасованные 5 кг</a>
+      </div>
+    </div>
+
+    <main class="page-wrap page-wrap--full container">
+      <section class="order">
+        <div class="order-card">
+          <h4 class="order-card__title">Яблоки свежие "Гремми Смит" фасованные 5 кг</h4>
+          <div class="order-card__tags">
+            <a href="#" class="order-card__tag">Zakazchik001</a>
+            <span class="order-card__tag">15 апреля 2022</span>
+            <a href="#" class="order-card__tag">Фрукты</a>
+          </div>
+          <div class="order-card__price">550 руб.</div>
+          <p class="order-card__text">
+            Товар: яблоки <br />
+            Тара: Пакет по 5 кг <br />
+            Оплата: С отсрочкой платежа <br />
+            Объем: до 3 тонн <br />
+            Доставка: Самовывоз <br />
+            Адрес: Калининград, ул. Гайдара 108
+          </p>
+          <p class="order-card__text">
+            В предложениях к заказу обязательно прикрепляйте фото продукта. сертификаты и ГТД Без фотографии, предложения не рассматриваются
+            Параметры: Производитель Турция, калибр яблок - 5
+          </p>
+          <div class="customer-card">
+            <div class="customer-card__number">3</div>
+            <div class="customer-card__rating">Рейтинг 2.0</div>
+            <div class="customer-card__reviews">Отзывы +1 / -0</div>
+            <div class="customer-card__title">Заказчик А-01</div>
+          </div>
+        </div>
+        <div class="order__offers">Предложения поставщиков (14)</div>
+        <div class="order-form">
+          <h5 class="order-form__title">Оставьте свое предложение</h5>
+          <label for="order-price" class="order-form__label order-form__label--required order-form__label--price">Предлагаемая цена</label>
+          <div class="order-form__input-group">
+            <input type="number" id="order-price" class="order-form__input" />
+            <span>до</span>
+            <input type="number" class="order-form__input" />
+          </div>
+          <div class="order-form__tip">если диапазона цен нет - впишите одинаковую цену</div>
+
+          <label for="order-text" class="order-form__label order-form__label--required order-form__label--text">Текст предложения</label>
+          <textarea id="order-text" name="description" rows="4" class="order-form__textarea" required></textarea>
+
+          <label for="order-file" class="order-form__label order-form__label--file">Файлы, сертификаты, ГТД и т.п.</label>
+          <label class="order-form__file-wrap">
+            <input type="file" class="order-form__file" />
+            Выбрать файл
+          </label>
+
+          <label class="order-form__checkbox">
+            <input type="checkbox" name="type" />
+            <span class="order-form__checkbox-checkmark"></span>
+            предложение видит только заказчик
+          </label>
+
+          <a href="#" class="button order-form__button">Отправить предложение</a>
+
+          <div class="order-form__raindrop"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <img class="footer__logo" src="./assets/images/logo.svg" alt="" />
+        <a href="tel:+7 (999) 123-45-67" class="footer__link">+7 (999) 123-45-67</a>
+      </div>
+    </footer>
+  </body>
+</html>

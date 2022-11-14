@@ -1,0 +1,60 @@
+@import '../../variables.scss';
+
+
+.info {
+  margin-bottom: 79px;
+
+  @media (min-width: $breakpoint-xl) {
+    margin-bottom: 67px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    display: grid;
+    grid-template:
+      'title   chart'
+      'text    chart' 1fr
+      'raindrop ...'
+      / 576px  auto;
+    column-gap: 40px;
+  }
+
+  &__title.title {
+    margin-bottom: 63px;
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: title;
+      margin-bottom: 53px;
+    }
+  }
+
+  &__text.text {
+    margin-bottom: 54px;
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: text;
+    }
+  }
+
+  &__chart {
+    width: 100%;
+    max-width: 595px;
+    margin-bottom: 85px;
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: chart;
+      width: 593px;
+      margin-top: 59px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__raindrop {
+    width: 84px;
+    height: 83px;
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='83' viewBox='0 0 84 83' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M41.7823 0H83.5646V41.3795C83.5646 64.1385 64.7629 82.759 41.7823 82.759C18.8017 82.759 0 64.1385 0 41.3795C0.00295951 18.6205 18.8017 0 41.7823 0Z' fill='%23002F6C' fill-opacity='0.4'/%3E%3Cpath d='M26.5018 40.291V23.6411H59.2376V57.8362H42.9618V40.291' stroke='white' stroke-width='0.7' stroke-miterlimit='22.9256'/%3E%3Cpath d='M29.6194 20.5325H21.8252V28.3042H29.6194V20.5325Z' fill='white' stroke='white' stroke-width='0.4252' stroke-miterlimit='22.9256'/%3E%3Cpath d='M46.7668 20.5325H38.9726V28.3042H46.7668V20.5325Z' fill='white' stroke='white' stroke-width='0.4252' stroke-miterlimit='22.9256'/%3E%3Cpath d='M63.9141 20.5325H56.1199V28.3042H63.9141V20.5325Z' fill='white' stroke='white' stroke-width='0.4252' stroke-miterlimit='22.9256'/%3E%3Cpath d='M29.6194 37.6301H21.8252V45.4016H29.6194V37.6301Z' fill='white' stroke='white' stroke-width='0.4252' stroke-miterlimit='22.9256'/%3E%3Cpath d='M46.7668 37.6301H38.9726V45.4016H46.7668V37.6301Z' fill='white' stroke='white' stroke-width='0.4252' stroke-miterlimit='22.9256'/%3E%3Cpath d='M63.9141 37.6301H56.1199V45.4016H63.9141V37.6301Z' fill='white' stroke='white' stroke-width='0.4252' stroke-miterlimit='22.9256'/%3E%3Cpath d='M46.7668 53.1736H38.9726V60.9451H46.7668V53.1736Z' fill='white' stroke='white' stroke-width='0.4252' stroke-miterlimit='22.9256'/%3E%3Cpath d='M63.9141 53.1736H56.1199V60.9451H63.9141V53.1736Z' fill='white' stroke='white' stroke-width='0.4252' stroke-miterlimit='22.9256'/%3E%3C/svg%3E%0A");
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: raindrop;
+    }
+  }
+}

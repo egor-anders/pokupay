@@ -1,0 +1,271 @@
+@import '../variables.scss';
+
+.orders {
+  display: grid;
+  height: fit-content;
+  margin-bottom: 77px;
+
+  @media (min-width: $breakpoint-lg) {
+    margin-bottom: 133px;
+  }
+
+  &__title.title {
+    margin-bottom: 42px;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 60px;
+      padding-left: 22px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-flow: column;
+    row-gap: 42px;
+    margin-bottom: 69px;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-flow: row wrap;
+      gap: 26px;
+      margin-bottom: 64px;
+      padding-left: 22px;
+    }
+  }
+
+  &__button {
+    display: block;
+    box-sizing: border-box;
+    width: fit-content;
+    height: 35px;
+    padding: 5px 32px;
+    color: $color-text;
+    font-size: 18px;
+    line-height: 25px;
+    white-space: nowrap;
+    text-decoration: none;
+    border: 1px solid #B3B3B3;
+    border-radius: 50px;
+
+    &--active {
+      color: #FFFFFF;
+      background-color: $color-brand;
+      border-color: transparent;
+    }
+
+    &--red {
+      color: #FFFFFF;
+      background-color: #FB3363;
+      border-color: transparent;
+    }
+
+    &:not(&--red):hover {
+      color: #FFFFFF;
+      background-color: $color-brand;
+      border-color: transparent;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    row-gap: 37px;
+    margin-bottom: 74px;
+
+    @media (min-width: $breakpoint-xl) {
+      row-gap: 61px;
+      margin-bottom: 177px;
+    }
+  }
+
+  &__more-btn.button {
+    justify-self: center;
+    box-sizing: border-box;
+    height: 35px;
+    padding: 5px 59px;
+    color: $color-text;
+    background-color: transparent;
+    border: 1px solid $color-brand;
+    cursor: pointer;
+  }
+}
+
+.orders-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  row-gap: 33px;
+  padding: 30px 24px 39px;
+  background-color: #F2F3F7;
+  border-radius: 20px;
+
+  @media (min-width: $breakpoint-xl) {
+    grid-template:
+      'title title price'
+      'tags  tags  price' 1fr
+      'text1 text2 type'
+      'text1 text2 offers'
+      '...   ...   button'
+      / 1fr  1fr   252px;
+    row-gap: 0;
+    box-sizing: border-box;
+    min-height: 350px;
+    padding: 30px 24px 20px;
+    background-color: unset;
+    background-image: url("data:image/svg+xml,%3Csvg width='895' height='360' viewBox='0 0 895 360' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20C0 8.95432 8.9543 0 20 0H875C886.046 0 895 8.9543 895 20V281C895 292.046 886.046 301 875 301H621.991C620.667 301 619.339 301.125 618.046 301.413C606.253 304.044 601.248 307.847 598.497 318.409C598.137 319.79 598 321.219 598 322.646V335.603C598 336.865 597.888 338.129 597.622 339.362C595.485 349.259 592.114 354.371 581.764 358.731C579.632 359.629 577.316 360 575.002 360H20C8.95431 360 0 351.046 0 340V20Z' fill='%23F2F3F7'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    &::before {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: calc(100% - 20px - 59px);
+      background-color: #F2F3F7;
+      border-radius: 20px;
+      content: '';
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: #323555;
+    font-weight: 400;
+    font-size: 21px;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 24px;
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: title;
+      margin-bottom: 17px;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-flow: row wrap;
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: tags;
+    }
+  }
+
+  &__tag {
+    color: #6D7483;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    &:not(:last-child)::after {
+      content: '|';
+      margin-left: 16px;
+      color: #6D7483;
+    }
+  }
+
+  a#{&}__tag{
+    color: $color-brand;
+    text-decoration: none;
+  }
+
+  &__price {
+    box-sizing: border-box;
+    width: 100%;
+    height: 86px;
+    padding: 24px 0;
+    color: #002F6C;
+    font-weight: 700;
+    font-size: 32px;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 37px;
+    text-align: center;
+    background-color: #E5E5E5;
+    border-radius: 24px;
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: price;
+      margin-bottom: 13px;
+    }
+  }
+
+  &__text {
+    width: 75%;
+    margin: 0;
+    color: #6D7483;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    @media (min-width: $breakpoint-xl) {
+      width: unset;
+      margin-bottom: 35px;
+
+      &:nth-of-type(1) {
+        grid-area: text1;
+        margin-right: 25px;
+      }
+
+      &:nth-of-type(2) {
+        grid-area: text2;
+        margin-right: 44px;
+      }
+    }
+  }
+
+  &__type {
+    display: flex;
+    flex-direction: row;
+    column-gap: 14px;
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: type;
+      margin-top: 15px;
+    }
+  }
+
+  &__raindrop {
+    width: 33px;
+    height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='32' viewBox='0 0 33 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.1088 0H32.2177V16C32.2177 24.8001 24.9688 32 16.1088 32C7.24886 32 0 24.8001 0 16C0.00114101 7.19989 7.24886 0 16.1088 0Z' fill='%23FB3363'/%3E%3C/svg%3E%0A");
+  }
+
+  &__type-text {
+    margin-top: 8px;
+    color: #6D7483;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__offers {
+    color: #002F6C;
+    font-size: 18px;
+    line-height: 25px;
+
+    @media (min-width: $breakpoint-xl) {
+      grid-area: offers;
+      justify-self: end;
+      align-self: end;
+      margin-bottom: 54px;
+    }
+  }
+
+  &__button.button {
+    width: 100%;
+    max-width: 340px;
+    height: 35px;
+    padding: 5px 0;
+    text-align: center;
+
+    @media (min-width: $breakpoint-xl) {
+      position: absolute;
+      right: -24px;
+      bottom: -20px;
+      grid-area: button;
+      width: unset;
+      padding: 5px 24px;
+      white-space: nowrap;
+    }
+  }
+}

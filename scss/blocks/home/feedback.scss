@@ -1,0 +1,158 @@
+/* stylelint-disable no-descending-specificity */
+
+@import '../../variables.scss';
+
+.feedback {
+  display: grid;
+  margin-bottom: 140px;
+
+  @media (min-width: $breakpoint-xl) {
+    grid-template-columns: 485px auto;
+    column-gap: 125px;
+  }
+
+  &__title.title {
+    margin-bottom: 74px;
+
+    @media (min-width: $breakpoint-xl) {
+      order: 2;
+    }
+  }
+
+  &__form {
+    justify-self: center;
+    max-width: 485px;
+
+    @media (min-width: $breakpoint-xl) {
+      order: 1;
+      margin-top: 23px;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 485px;
+    height: 50px;
+    padding: 12px 30px;
+    font-size: 18px;
+    line-height: 25px;
+    background-color: transparent;
+    border: 1px solid $color-grey-light;
+    border-radius: 20px;
+
+    &:not(:first-child) {
+      // margin-top: 21px;
+    }
+
+    &[required] + label {
+      position: relative;
+      top: -37px;
+      left: 31px;
+      color: $color-grey;
+      font-size: 18px;
+      line-height: 25px;
+      pointer-events: none;
+    }
+
+    &[required] + label::after {
+      content: '*';
+      color: red;
+    }
+
+    &[required]:invalid + label {
+      display: inline-block;
+    }
+
+    &[required]:valid + label{
+      visibility: hidden;
+    }
+  }
+
+  &__textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 485px;
+    padding: 12px 30px;
+    font-size: 18px;
+    line-height: 25px;
+    background-color: transparent;
+    border: 1px solid $color-grey-light;
+    border-radius: 20px;
+    resize: none;
+
+    &[required] + label {
+      position: relative;
+      top: -116px;
+      left: 31px;
+      color: $color-grey;
+      font-size: 18px;
+      line-height: 25px;
+      pointer-events: none;
+    }
+
+    &[required] + label::after {
+      content: '*';
+      color: red;
+    }
+
+    &[required]:invalid + label {
+      display: inline-block;
+    }
+
+    &[required]:valid + label{
+      visibility: hidden;
+    }
+  }
+
+  &__radios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0 27px;
+  }
+
+  &__radio {
+    position: relative;
+    display: block;
+    padding-left: 40px;
+    font-size: 18px;
+    line-height: 25px;
+    cursor: pointer;
+    user-select: none;
+
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      cursor: pointer;
+      opacity: 0;
+    }
+
+    &-checkmark {
+      position: absolute;
+      top: 2.5px;
+      left: 0;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: 1px solid #000000;
+      border-radius: 50%;
+    }
+
+    input:checked ~ &-checkmark {
+      background-color: $color-brand;
+      border: none;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-top: 25px;
+
+    @media (min-width: $breakpoint-xl) {
+      margin-top: 16px;
+    }
+  }
+}

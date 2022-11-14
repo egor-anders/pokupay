@@ -1,0 +1,36 @@
+/* stylelint-disable scss/at-extend-no-missing-placeholder */
+
+@import '../variables.scss';
+
+.footer {
+  padding-top: 41px;
+  border-top: 1px solid $color-grey-light;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $breakpoint-lg) {
+      align-items: start;
+    }
+  }
+
+  &__logo {
+    width: 343px;
+    height: 55px;
+    margin-bottom: 41px;
+  }
+
+  &__link {
+    margin-bottom: 78px;
+    color: $color-grey;
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration-line: underline;
+
+    &:hover {
+      color: $color-title;
+    }
+  }
+}

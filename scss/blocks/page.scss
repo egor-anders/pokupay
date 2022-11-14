@@ -1,0 +1,166 @@
+@import '../variables.scss';
+
+.page-header {
+  display: grid;
+  margin-bottom: 42px;
+  padding-top: 42px;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template:
+      'title    title       text'
+      'raindrops breadcrumbs breadcrumbs'
+      /  auto     1fr      50%;
+    row-gap: 32px;
+    margin-bottom: 123px;
+    padding-top: 75px;
+    column-gap: 70px;
+  }
+
+  &__title.title {
+    margin-bottom: 42px;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-area: title;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text.text {
+    margin-bottom: 65px;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-area: text;
+      margin-bottom: 0;
+    }
+  }
+
+  &__raindrops {
+    margin-bottom: 27px;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-area: raindrops;
+      margin-bottom: 0;
+    }
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    flex-flow: row wrap;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-area: breadcrumbs;
+      align-self: end;
+    }
+  }
+
+  &__breadcrumb {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 19px;
+
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    &:not(:last-child)::after {
+      content: '>';
+      margin-left: 6px;
+    }
+  }
+
+  a#{&}__breadcrumb {
+    color: $color-brand;
+    text-decoration: none;
+  }
+}
+
+.page-wrap {
+  display: grid;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 285px 1fr;
+    column-gap: 20px;
+  }
+
+  &--full {
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      column-gap: unset;
+    }
+  }
+}
+
+.page-menu {
+  @media (min-width: $breakpoint-lg) {
+    padding-top: 15px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+  }
+
+  &__title {
+    margin: 0 0 57px;
+    padding: 0 24px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 21px;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  &__nav, &__title {
+    display: none;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    &__nav {
+      display: flex;
+    }
+
+    &__title {
+      display: block;
+    }
+  }
+
+  &__item {
+    padding: 16px 18px;
+    color: #6D7483;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 28px;
+    text-decoration: none;
+
+    &:not(:last-child) {
+      border-bottom: 0.7px solid #C4C4C4;
+    }
+  }
+}
+
+.page-search {
+  box-sizing: border-box;
+  height: 127px;
+  margin-bottom: 60px;
+  padding: 18px 24px;
+  background: $color-brand;
+  border-radius: 20px;
+
+  @media (min-width: $breakpoint-lg) {
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    width: 50%;
+    margin: 0;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 21px;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+}
